@@ -4,22 +4,22 @@ import "./index.css";
 const Hero = () => {
   const stats = [
     {
-      icon: "👥",
+      icon: "/icons/students_trained.webp",
       number: "500+",
       text: "Students Trained",
     },
     {
-      icon: "📈",
+      icon: "/icons/placement_support.webp",
       number: "90%",
       text: "Placement Support",
     },
     {
-      icon: "⭐",
+      icon: "/icons/industry_mentors.webp",
       number: "10+",
       text: "Industry Mentors",
     },
     {
-      icon: "💼",
+      icon: "/icons/real_projects.webp",
       number: "Real Projects",
       text: "Hands-on Learning",
     },
@@ -27,27 +27,29 @@ const Hero = () => {
 
   const courses = [
     {
-      icon: "📢",
+      icon: "/icons/digital_marketing.webp",
       title: "Digital Marketing Foundation",
     },
     {
-      icon: "📈",
+      icon: "/icons/seo_mastery.webp",
       title: "SEO Mastery",
     },
     {
-      icon: "🎯",
+      icon: "/icons/social_media_marketing.webp",
       title: "Social Media Marketing",
     },
     {
-      icon: "📊",
+      icon: "/icons/google_ads.webp",
       title: "Google Ads & Performance Marketing",
     },
   ];
 
   return (
     <section className="landing-section-wrapper">
+
       {/* ================= HERO ================= */}
       <section className="hero-section" id="home">
+
         {/* Background */}
         <div className="hero-bg-wrapper">
           <img
@@ -61,8 +63,10 @@ const Hero = () => {
 
         {/* Main Hero */}
         <div className="hero-container">
+
           {/* Left Content */}
           <div className="hero-content">
+
             <p className="hero-badge">
               LEARN <span>|</span> PRACTICE <span>|</span> GROW
             </p>
@@ -79,6 +83,7 @@ const Hero = () => {
             </p>
 
             <div className="hero-buttons">
+
               <button className="btn-explore">
                 Explore Courses
                 <span className="arrow">→</span>
@@ -88,54 +93,75 @@ const Hero = () => {
                 <span className="play-icon">▶</span>
                 Watch Video
               </button>
+
             </div>
+
           </div>
 
           {/* Right Image */}
           <div className="hero-image-container">
             
-
-            <img
-              src="/student_img/student.webp"
-              alt="Student learning digital marketing"
-              className="hero-main-img"
-            />
           </div>
+
         </div>
 
-        {/* Stats */}
+        {/* ================= STATS ================= */}
         <div className="hero-stats-wrapper">
+
           <div className="hero-stats-card">
+
             {stats.map((item, index) => (
               <div className="stat-item" key={index}>
-                <div className="stat-icon">{item.icon}</div>
+
+                <div className="stat-icon">
+                  <img
+                    src={item.icon}
+                    alt={item.text}
+                    className="stat-icon-img"
+                  />
+                </div>
 
                 <div className="stat-info">
                   <h3>{item.number}</h3>
                   <p>{item.text}</p>
                 </div>
+
               </div>
             ))}
+
           </div>
+
         </div>
+
       </section>
 
+
       {/* ================= COURSES ================= */}
+
       <section className="courses-section" id="courses">
+
         <div className="courses-header">
+
           <h2>Popular Courses</h2>
 
           <a href="#all-courses" className="view-all-link">
             View All Courses
             <span>→</span>
           </a>
+
         </div>
 
         <div className="courses-grid">
+
           {courses.map((course, index) => (
             <article className="course-card" key={index}>
+
               <div className="course-icon-box">
-                {course.icon}
+                <img
+                  src={course.icon}
+                  alt={course.title}
+                  className="course-icon-img"
+                />
               </div>
 
               <h3>{course.title}</h3>
@@ -144,10 +170,14 @@ const Hero = () => {
                 Learn More
                 <span>→</span>
               </a>
+
             </article>
           ))}
+
         </div>
+
       </section>
+
     </section>
   );
 };

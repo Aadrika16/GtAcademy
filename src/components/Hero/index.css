@@ -28,7 +28,7 @@
   position: relative;
 
   width: 100%;
-  min-height: 640px;
+  min-height: 620px;
 
   margin: 0;
   padding: 0;
@@ -83,7 +83,7 @@
       90deg,
       rgba(1, 14, 7, 0.82) 0%,
       rgba(2, 17, 9, 0.64) 45%,
-      rgba(2, 20, 10, 0.3) 100%
+      rgba(2, 20, 10, 0.30) 100%
     );
 }
 
@@ -94,30 +94,23 @@
 
 .hero-container {
   position: relative;
-
   z-index: 5;
 
   width: 100%;
   max-width: 1180px;
 
-  min-height: 640px;
+  min-height: 620px;
 
   margin: 0 auto;
 
-  /*
-    78px navbar
-    + 40px internal top spacing
-  */
   padding:
-    118px 24px
-    70px;
+    95px 24px
+    55px;
 
   display: grid;
+  grid-template-columns: 52% 48%;
 
-  grid-template-columns:
-    52% 48%;
-
-  align-items: center;
+  align-items: start;
 }
 
 
@@ -127,11 +120,12 @@
 
 .hero-content {
   position: relative;
-
   z-index: 6;
 
   width: 100%;
   max-width: 540px;
+
+  padding-top: 35px;
 
   display: flex;
   flex-direction: column;
@@ -142,9 +136,7 @@
 }
 
 .hero-badge {
-  margin:
-    0 0
-    18px;
+  margin: 0 0 18px;
 
   font-size: 12px;
   font-weight: 600;
@@ -161,15 +153,12 @@
 }
 
 .hero-title {
-  margin:
-    0 0
-    18px;
+  margin: 0 0 18px;
 
   font-size: 52px;
   line-height: 1.05;
 
   font-weight: 800;
-
   letter-spacing: -1.4px;
 
   color: #ffffff;
@@ -185,9 +174,7 @@
   width: 100%;
   max-width: 495px;
 
-  margin:
-    0 0
-    28px;
+  margin: 0 0 28px;
 
   font-size: 15px;
   line-height: 1.6;
@@ -216,8 +203,7 @@
 .btn-watch {
   min-height: 45px;
 
-  padding:
-    0 24px;
+  padding: 0 24px;
 
   border-radius: 28px;
 
@@ -286,7 +272,6 @@
   height: 24px;
 
   display: flex;
-
   align-items: center;
   justify-content: center;
 
@@ -305,95 +290,51 @@
 
 /* =========================================
    RIGHT STUDENT IMAGE
+   FULL HEAD + BODY VISIBLE
 ========================================= */
 
 .hero-image-container {
   position: relative;
-
   z-index: 6;
 
   width: 100%;
-  height: 100%;
+  height: 510px;
 
   display: flex;
 
   align-items: flex-end;
-  justify-content: center;
+  justify-content: flex-end;
 
   padding:
-    0 30px
-    0 50px;
+    0 5px
+    0 20px;
 
   overflow: visible;
 }
 
 .hero-main-img {
   position: relative;
-
   z-index: 7;
 
   display: block;
 
-  width: 100%;
-  max-width: 500px;
-  height: auto;
+  width: auto;
+  height: 100%;
 
-  margin: 0 auto;
+  max-width: 100%;
+  max-height: 500px;
+
+  margin: 0;
 
   object-fit: contain;
-  object-position: center bottom;
+  object-position: bottom center;
 
-  transform: translateX(22px);
+  transform: none;
 }
 
 
 /* =========================================
-   HANDWRITTEN DECORATION
-========================================= */
-
-.handwritten-note {
-  position: absolute;
-
-  z-index: 8;
-
-  top: 110px;
-  left: 25px;
-
-  display: flex;
-  flex-direction: column;
-
-  font-family:
-    "Courier New",
-    Courier,
-    monospace;
-
-  font-size: 14px;
-  line-height: 1.05;
-
-  font-weight: 700;
-
-  color: #00ed81;
-
-  text-align: center;
-
-  transform: rotate(-10deg);
-
-  pointer-events: none;
-}
-
-.handwritten-note span {
-  display: block;
-}
-
-.curved-arrow {
-  margin-top: 4px;
-
-  font-size: 18px;
-}
-
-
-/* =========================================
-   STATS CARD
+   STATS WRAPPER
 ========================================= */
 
 .hero-stats-wrapper {
@@ -407,19 +348,16 @@
   width: 100%;
   max-width: 1180px;
 
-  padding:
-    0 24px;
+  padding: 0 24px;
 
   z-index: 20;
 }
 
 .hero-stats-card {
   width: 100%;
-
   min-height: 112px;
 
-  padding:
-    22px 24px;
+  padding: 20px 24px;
 
   display: grid;
 
@@ -437,6 +375,11 @@
     rgba(0, 0, 0, 0.18);
 }
 
+
+/* =========================================
+   STAT ITEM
+========================================= */
+
 .stat-item {
   position: relative;
 
@@ -448,8 +391,7 @@
 
   gap: 12px;
 
-  padding:
-    0 16px;
+  padding: 0 16px;
 }
 
 .stat-item:not(:last-child)::after {
@@ -460,8 +402,7 @@
   top: 50%;
   right: 0;
 
-  transform:
-    translateY(-50%);
+  transform: translateY(-50%);
 
   width: 1px;
   height: 50px;
@@ -469,9 +410,14 @@
   background: #e4e8e6;
 }
 
+
+/* =========================================
+   STAT ICONS
+========================================= */
+
 .stat-icon {
-  width: 42px;
-  height: 42px;
+  width: 48px;
+  height: 48px;
 
   display: flex;
 
@@ -483,19 +429,32 @@
   border-radius: 10px;
 
   background:
-    rgba(0, 220, 120, 0.08);
+    rgba(0, 220, 120, 0.05);
 
-  font-size: 21px;
+  overflow: hidden;
 }
+
+.stat-icon-img {
+  width: 38px;
+  height: 38px;
+
+  display: block;
+
+  object-fit: contain;
+  object-position: center;
+}
+
+
+/* =========================================
+   STAT TEXT
+========================================= */
 
 .stat-info {
   min-width: 0;
 }
 
 .stat-info h3 {
-  margin:
-    0 0
-    3px;
+  margin: 0 0 3px;
 
   font-size: 17px;
 
@@ -508,7 +467,6 @@
   margin: 0;
 
   font-size: 11px;
-
   line-height: 1.3;
 
   color: #68756f;
@@ -531,6 +489,11 @@
 
   background: #ffffff;
 }
+
+
+/* =========================================
+   COURSES HEADER
+========================================= */
 
 .courses-header {
   margin-bottom: 22px;
@@ -566,6 +529,11 @@
   font-weight: 700;
 }
 
+
+/* =========================================
+   COURSES GRID
+========================================= */
+
 .courses-grid {
   display: grid;
 
@@ -574,6 +542,11 @@
 
   gap: 16px;
 }
+
+
+/* =========================================
+   COURSE CARD
+========================================= */
 
 .course-card {
   min-height: 170px;
@@ -605,40 +578,55 @@
 }
 
 .course-card:hover {
-  transform:
-    translateY(-4px);
+  transform: translateY(-4px);
 
   box-shadow:
     0 10px 24px
     rgba(0, 168, 90, 0.08);
 }
 
+
+/* =========================================
+   COURSE ICONS
+========================================= */
+
 .course-icon-box {
-  width: 42px;
-  height: 42px;
+  width: 50px;
+  height: 50px;
 
   margin-bottom: 14px;
 
   display: flex;
-
   align-items: center;
   justify-content: center;
 
-  border-radius: 9px;
+  border-radius: 10px;
 
   background:
-    rgba(0, 225, 123, 0.08);
+    rgba(0, 225, 123, 0.05);
 
-  font-size: 21px;
+  overflow: hidden;
 }
 
+.course-icon-img {
+  width: 40px;
+  height: 40px;
+
+  display: block;
+
+  object-fit: contain;
+  object-position: center;
+}
+
+
+/* =========================================
+   COURSE TEXT
+========================================= */
+
 .course-card h3 {
-  margin:
-    0 0
-    auto;
+  margin: 0 0 auto;
 
   font-size: 15px;
-
   line-height: 1.3;
 
   color: #111914;
@@ -660,7 +648,7 @@
 
 /* =========================================
    LARGE DESKTOP
-   1400px+
+   >= 1400px
 ========================================= */
 
 @media screen and (min-width: 1400px) {
@@ -671,12 +659,20 @@
     max-width: 1260px;
   }
 
+  .hero-section {
+    min-height: 640px;
+  }
+
   .hero-container {
-    min-height: 660px;
+    min-height: 640px;
 
     padding:
-      118px 24px
-      75px;
+      95px 24px
+      60px;
+  }
+
+  .hero-content {
+    padding-top: 38px;
   }
 
   .hero-title {
@@ -684,16 +680,39 @@
   }
 
   .hero-image-container {
+    height: 535px;
+
     padding:
-      0 35px
-      0 60px;
+      0 0
+      0 20px;
   }
 
   .hero-main-img {
-    max-width: 520px;
+    width: auto;
+    height: 100%;
 
-    transform:
-      translateX(25px);
+    max-width: 100%;
+    max-height: 525px;
+  }
+
+  .stat-icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .stat-icon-img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .course-icon-box {
+    width: 52px;
+    height: 52px;
+  }
+
+  .course-icon-img {
+    width: 42px;
+    height: 42px;
   }
 }
 
@@ -705,13 +724,23 @@
 
 @media screen and (max-width: 1100px) {
 
+  .hero-section {
+    min-height: 590px;
+  }
+
   .hero-container {
+    min-height: 590px;
+
     grid-template-columns:
       50% 50%;
 
     padding:
-      115px 30px
-      70px;
+      90px 30px
+      60px;
+  }
+
+  .hero-content {
+    padding-top: 34px;
   }
 
   .hero-title {
@@ -719,25 +748,33 @@
   }
 
   .hero-image-container {
+    height: 485px;
+
     padding:
-      0 20px
-      0 40px;
+      0 5px
+      0 20px;
   }
 
   .hero-main-img {
-    max-width: 450px;
+    width: auto;
+    height: 100%;
 
-    transform:
-      translateX(18px);
-  }
-
-  .handwritten-note {
-    left: 8px;
+    max-height: 475px;
+    max-width: 100%;
   }
 
   .stat-item {
-    padding:
-      0 10px;
+    padding: 0 10px;
+  }
+
+  .stat-icon {
+    width: 44px;
+    height: 44px;
+  }
+
+  .stat-icon-img {
+    width: 35px;
+    height: 35px;
   }
 
   .stat-info h3 {
@@ -758,18 +795,22 @@
 @media screen and (max-width: 900px) {
 
   .hero-section {
-    min-height: 610px;
+    min-height: 560px;
   }
 
   .hero-container {
-    min-height: 610px;
+    min-height: 560px;
 
     grid-template-columns:
       47% 53%;
 
     padding:
-      108px 24px
-      70px;
+      85px 24px
+      55px;
+  }
+
+  .hero-content {
+    padding-top: 30px;
   }
 
   .hero-title {
@@ -781,23 +822,19 @@
   }
 
   .hero-image-container {
+    height: 440px;
+
     padding:
-      0 15px
-      0 32px;
+      0 5px
+      0 15px;
   }
 
   .hero-main-img {
-    max-width: 400px;
+    width: auto;
+    height: 100%;
 
-    transform:
-      translateX(14px);
-  }
-
-  .handwritten-note {
-    top: 115px;
-    left: 0;
-
-    font-size: 12px;
+    max-height: 430px;
+    max-width: 100%;
   }
 
   .hero-stats-card {
@@ -806,22 +843,34 @@
   }
 
   .stat-item {
-    padding:
-      0 6px;
+    padding: 0 6px;
 
     gap: 7px;
   }
 
   .stat-icon {
-    width: 37px;
-    height: 37px;
+    width: 40px;
+    height: 40px;
+  }
 
-    font-size: 17px;
+  .stat-icon-img {
+    width: 31px;
+    height: 31px;
   }
 
   .courses-grid {
     grid-template-columns:
       repeat(2, minmax(0, 1fr));
+  }
+
+  .course-icon-box {
+    width: 43px;
+    height: 43px;
+  }
+
+  .course-icon-img {
+    width: 34px;
+    height: 34px;
   }
 }
 
@@ -849,20 +898,16 @@
       linear-gradient(
         180deg,
         rgba(1, 14, 7, 0.84) 0%,
-        rgba(2, 17, 9, 0.7) 55%,
+        rgba(2, 17, 9, 0.70) 55%,
         rgba(2, 20, 10, 0.45) 100%
       );
   }
 
-  /*
-    Navbar is 68px on mobile.
-    Content starts below it.
-  */
   .hero-container {
     min-height: auto;
 
     padding:
-      105px 18px
+      82px 18px
       15px;
 
     display: flex;
@@ -876,6 +921,8 @@
   .hero-content {
     width: 100%;
     max-width: none;
+
+    padding-top: 8px;
 
     align-items: flex-start;
 
@@ -894,7 +941,6 @@
     margin-bottom: 14px;
 
     font-size: 36px;
-
     line-height: 1.04;
 
     text-align: left;
@@ -906,7 +952,6 @@
     margin-bottom: 22px;
 
     font-size: 13px;
-
     line-height: 1.55;
 
     text-align: left;
@@ -924,25 +969,25 @@
 
     min-width: 0;
 
-    padding:
-      0 12px;
+    padding: 0 12px;
 
     font-size: 12px;
   }
 
-  /* Student Image */
+
+  /* =====================================
+     STUDENT IMAGE MOBILE
+  ===================================== */
 
   .hero-image-container {
     position: relative;
 
     width: 100%;
-    height: auto;
+    height: 370px;
 
-    margin-top: 12px;
+    margin-top: 15px;
 
-    padding:
-      0 12px
-      0 22px;
+    padding: 0 5px;
 
     display: flex;
 
@@ -955,27 +1000,24 @@
   .hero-main-img {
     position: relative;
 
-    width: 100%;
-    max-width: 360px;
-    height: auto;
+    width: auto;
+    height: 100%;
+
+    max-width: 100%;
+    max-height: 365px;
 
     margin: 0 auto;
 
     object-fit: contain;
-    object-position: center bottom;
+    object-position: bottom center;
 
-    transform:
-      translateX(10px);
+    transform: none;
   }
 
-  .handwritten-note {
-    top: 40px;
-    left: 5%;
 
-    font-size: 11px;
-  }
-
-  /* Stats */
+  /* =====================================
+     STATS MOBILE
+  ===================================== */
 
   .hero-stats-wrapper {
     position: relative;
@@ -987,8 +1029,7 @@
 
     width: 100%;
 
-    padding:
-      0 12px;
+    padding: 0 12px;
 
     margin-top: -2px;
   }
@@ -996,8 +1037,7 @@
   .hero-stats-card {
     min-height: auto;
 
-    padding:
-      16px 6px;
+    padding: 15px 6px;
 
     grid-template-columns:
       repeat(4, minmax(0, 1fr));
@@ -1006,8 +1046,7 @@
   }
 
   .stat-item {
-    padding:
-      0 3px;
+    padding: 0 3px;
 
     flex-direction: column;
 
@@ -1021,10 +1060,15 @@
   }
 
   .stat-icon {
-    width: 31px;
-    height: 31px;
+    width: 34px;
+    height: 34px;
 
-    font-size: 15px;
+    background: transparent;
+  }
+
+  .stat-icon-img {
+    width: 28px;
+    height: 28px;
   }
 
   .stat-info h3 {
@@ -1039,7 +1083,10 @@
     line-height: 1.15;
   }
 
-  /* Courses */
+
+  /* =====================================
+     COURSES MOBILE
+  ===================================== */
 
   .courses-section {
     padding:
@@ -1074,12 +1121,17 @@
   }
 
   .course-icon-box {
-    width: 36px;
-    height: 36px;
+    width: 38px;
+    height: 38px;
 
     margin-bottom: 11px;
 
-    font-size: 18px;
+    background: transparent;
+  }
+
+  .course-icon-img {
+    width: 32px;
+    height: 32px;
   }
 
   .course-card h3 {
@@ -1103,8 +1155,12 @@
 
   .hero-container {
     padding:
-      95px 15px
+      78px 15px
       10px;
+  }
+
+  .hero-content {
+    padding-top: 6px;
   }
 
   .hero-title {
@@ -1123,49 +1179,53 @@
   .btn-watch {
     min-height: 40px;
 
-    padding:
-      0 8px;
+    padding: 0 8px;
 
     font-size: 11px;
   }
 
-  .hero-image-container {
-    margin-top: 10px;
 
-    padding:
-      0 8px
-      0 18px;
+  /* Image */
+
+  .hero-image-container {
+    height: 325px;
+
+    margin-top: 12px;
+
+    padding: 0;
   }
 
   .hero-main-img {
-    max-width: 320px;
+    width: auto;
+    height: 100%;
 
-    transform:
-      translateX(8px);
+    max-height: 320px;
+    max-width: 100%;
+
+    object-fit: contain;
+
+    transform: none;
   }
 
-  .handwritten-note {
-    top: 34px;
-    left: 2%;
 
-    font-size: 10px;
-  }
+  /* Stats */
 
   .hero-stats-wrapper {
-    padding:
-      0 8px;
+    padding: 0 8px;
   }
 
   .hero-stats-card {
-    padding:
-      13px 3px;
+    padding: 13px 3px;
   }
 
   .stat-icon {
-    width: 28px;
-    height: 28px;
+    width: 30px;
+    height: 30px;
+  }
 
-    font-size: 13px;
+  .stat-icon-img {
+    width: 25px;
+    height: 25px;
   }
 
   .stat-info h3 {
@@ -1175,6 +1235,9 @@
   .stat-info p {
     font-size: 7px;
   }
+
+
+  /* Courses */
 
   .courses-section {
     padding:
@@ -1193,6 +1256,16 @@
       12px 9px;
   }
 
+  .course-icon-box {
+    width: 34px;
+    height: 34px;
+  }
+
+  .course-icon-img {
+    width: 28px;
+    height: 28px;
+  }
+
   .course-card h3 {
     font-size: 11px;
   }
@@ -1208,8 +1281,12 @@
 
   .hero-container {
     padding:
-      90px 12px
+      74px 12px
       10px;
+  }
+
+  .hero-content {
+    padding-top: 5px;
   }
 
   .hero-title {
@@ -1224,21 +1301,35 @@
   .btn-watch {
     font-size: 10px;
 
-    padding:
-      0 6px;
+    padding: 0 6px;
   }
 
+
+  /* Image */
+
   .hero-image-container {
-    padding:
-      0 5px
-      0 15px;
+    height: 285px;
   }
 
   .hero-main-img {
-    max-width: 290px;
+    width: auto;
+    height: 100%;
 
-    transform:
-      translateX(6px);
+    max-height: 280px;
+    max-width: 100%;
+  }
+
+
+  /* Stats */
+
+  .stat-icon {
+    width: 27px;
+    height: 27px;
+  }
+
+  .stat-icon-img {
+    width: 23px;
+    height: 23px;
   }
 
   .stat-info h3 {
@@ -1247,5 +1338,18 @@
 
   .stat-info p {
     font-size: 6.5px;
+  }
+
+
+  /* Courses */
+
+  .course-icon-box {
+    width: 31px;
+    height: 31px;
+  }
+
+  .course-icon-img {
+    width: 26px;
+    height: 26px;
   }
 }

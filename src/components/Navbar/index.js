@@ -22,55 +22,85 @@ const Navbar = () => {
     setIsOpen(false);
   };
 
+  const handleNavClick = (item) => {
+    setActiveTab(item);
+    closeMenu();
+  };
+
   return (
     <nav className="navbar-container">
       <div className="navbar-content">
         {/* Logo */}
-        <a href="#home" className="navbar-logo" onClick={closeMenu}>
-          <img src="/logo/logo1.svg" alt="GT Apex Logo" />
+        <a
+          href="#home"
+          className="navbar-logo"
+          onClick={() => handleNavClick("Home")}
+        >
+          <img
+            src="/logo/logo1.svg"
+            alt="GT Apex Logo"
+          />
         </a>
 
-        {/* Navigation Links */}
+        {/* Desktop + Mobile Navigation */}
         <ul className={`navbar-links ${isOpen ? "active" : ""}`}>
           {navLinks.map((item) => (
             <li key={item}>
               <a
                 href={`#${item.toLowerCase()}`}
                 className={
-                  activeTab === item ? "nav-item active" : "nav-item"
+                  activeTab === item
+                    ? "nav-item active"
+                    : "nav-item"
                 }
-                onClick={() => {
-                  setActiveTab(item);
-                  closeMenu();
-                }}
+                onClick={() => handleNavClick(item)}
               >
                 {item}
               </a>
             </li>
           ))}
 
-          {/* Mobile Button */}
+          {/* Mobile CTA */}
           <li className="mobile-cta-item">
-            <button className="navbar-cta-btn">Enquire Now</button>
+            <button
+              className="navbar-cta-btn"
+              onClick={closeMenu}
+            >
+              Enquire Now
+            </button>
           </li>
         </ul>
 
-        {/* Desktop Button */}
+        {/* Desktop CTA */}
         <div className="desktop-cta">
-          <button className="navbar-cta-btn">Enquire Now</button>
+          <button className="navbar-cta-btn">
+            Enquire Now
+          </button>
         </div>
 
         {/* Hamburger */}
         <button
-          className={`menu-toggle ${isOpen ? "is-active" : ""}`}
+          type="button"
+          className={`menu-toggle ${
+            isOpen ? "is-active" : ""
+          }`}
           onClick={toggleMenu}
-          aria-label="Toggle navigation"
+          aria-label="Toggle navigation menu"
+          aria-expanded={isOpen}
         >
           <span className="bar"></span>
           <span className="bar"></span>
           <span className="bar"></span>
         </button>
       </div>
+
+      {/* Mobile overlay */}
+      <div
+        className={`navbar-overlay ${
+          isOpen ? "active" : ""
+        }`}
+        onClick={closeMenu}
+      ></div>
     </nav>
   );
 };
