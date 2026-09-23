@@ -1,0 +1,812 @@
+/* =========================================
+   CAREER SECTION
+========================================= */
+
+.career-section {
+  width: 100%;
+
+  background: #ffffff;
+
+  font-family:
+    "Segoe UI",
+    Tahoma,
+    Geneva,
+    Verdana,
+    sans-serif;
+}
+
+.career-container {
+  width: 100%;
+  max-width: 1180px;
+
+  margin: 0 auto;
+
+  padding:
+    0 24px
+    70px;
+}
+
+
+/* =========================================
+   CTA BANNER
+========================================= */
+
+.career-banner {
+  position: relative;
+
+  width: 100%;
+  min-height: 300px;
+
+  display: grid;
+  grid-template-columns:
+    50% 50%;
+
+  align-items: stretch;
+
+  overflow: hidden;
+
+  border-radius: 18px;
+
+  background:
+    linear-gradient(
+      105deg,
+      #052515 0%,
+      #06371f 48%,
+      #031b10 100%
+    );
+
+  box-shadow:
+    0 12px 30px
+    rgba(0, 0, 0, 0.1);
+}
+
+
+/* subtle left background glow */
+.career-banner::before {
+  content: "";
+
+  position: absolute;
+
+  width: 320px;
+  height: 320px;
+
+  left: -100px;
+  bottom: -160px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(0, 237, 129, 0.12),
+      transparent 70%
+    );
+
+  pointer-events: none;
+
+  z-index: 0;
+}
+
+
+/* subtle top green decoration */
+.career-banner::after {
+  content: "";
+
+  position: absolute;
+
+  top: -105px;
+  right: 80px;
+
+  width: 260px;
+  height: 160px;
+
+  transform: rotate(-35deg);
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0, 237, 129, 0.2),
+      rgba(0, 237, 129, 0)
+    );
+
+  pointer-events: none;
+
+  z-index: 0;
+}
+
+
+/* =========================================
+   LEFT CONTENT
+========================================= */
+
+.career-banner-content {
+  position: relative;
+
+  z-index: 3;
+
+  min-width: 0;
+
+  padding:
+    42px 25px
+    42px 42px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+
+  text-align: left;
+}
+
+.career-banner-content h2 {
+  margin:
+    0 0
+    15px;
+
+  max-width: 460px;
+
+  font-size: 32px;
+  line-height: 1.12;
+
+  font-weight: 800;
+
+  letter-spacing: -0.7px;
+
+  color: #ffffff;
+}
+
+.career-banner-content p {
+  margin:
+    0 0
+    24px;
+
+  max-width: 430px;
+
+  font-size: 14px;
+  line-height: 1.55;
+
+  color: #bccbc4;
+}
+
+
+/* =========================================
+   CTA BUTTON
+========================================= */
+
+.career-btn {
+  min-height: 44px;
+
+  padding:
+    0 22px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 10px;
+
+  border: none;
+  border-radius: 26px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #03b965 0%,
+      #00ed81 100%
+    );
+
+  color: #03160c;
+
+  font-family: inherit;
+
+  font-size: 13px;
+  font-weight: 800;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 5px 18px
+    rgba(0, 237, 129, 0.25);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.career-btn:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 8px 24px
+    rgba(0, 237, 129, 0.38);
+}
+
+
+/* =========================================
+   RIGHT IMAGE
+========================================= */
+
+.career-banner-image-wrap {
+  position: relative;
+
+  z-index: 2;
+
+  width: 100%;
+  height: 100%;
+
+  min-width: 0;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+
+  overflow: hidden;
+}
+
+.career-banner-image {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+  object-position: center center;
+
+  border: 0;
+}
+
+
+/* =========================================
+   IMAGE OVERLAY
+   Blends image into left background
+========================================= */
+
+.career-banner-image-wrap::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 2;
+
+  background:
+    linear-gradient(
+      90deg,
+      #06301c 0%,
+      rgba(6, 48, 28, 0.72) 10%,
+      rgba(6, 48, 28, 0.18) 32%,
+      transparent 55%
+    );
+
+  pointer-events: none;
+}
+
+
+/* =========================================
+   HEADING
+========================================= */
+
+.career-heading {
+  margin-top: 30px;
+  margin-bottom: 17px;
+
+  text-align: left;
+}
+
+.career-heading h2 {
+  margin: 0;
+
+  font-size: 24px;
+  line-height: 1.2;
+
+  font-weight: 800;
+
+  color: #111914;
+}
+
+
+/* =========================================
+   FEATURE GRID
+========================================= */
+
+.career-features-grid {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap: 16px;
+}
+
+
+/* =========================================
+   FEATURE CARD
+========================================= */
+
+.career-feature-card {
+  min-width: 0;
+  min-height: 125px;
+
+  padding:
+    20px 12px;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  background: #ffffff;
+
+  border:
+    1px solid
+    #edf1ef;
+
+  border-radius: 13px;
+
+  box-shadow:
+    0 5px 18px
+    rgba(0, 0, 0, 0.035);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.career-feature-card:hover {
+  transform: translateY(-4px);
+
+  box-shadow:
+    0 10px 25px
+    rgba(0, 166, 89, 0.09);
+}
+
+
+/* =========================================
+   FEATURE ICON
+========================================= */
+
+.career-feature-icon {
+  width: 42px;
+  height: 42px;
+
+  margin-bottom: 11px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 10px;
+
+  background:
+    rgba(0, 225, 123, 0.08);
+
+  color: #00a95a;
+
+  font-size: 20px;
+}
+
+
+/* =========================================
+   FEATURE TITLE
+========================================= */
+
+.career-feature-card h3 {
+  margin: 0;
+
+  font-size: 13px;
+  line-height: 1.25;
+
+  font-weight: 700;
+
+  color: #141c17;
+}
+
+
+/* =========================================
+   LARGE DESKTOP
+   1400+
+========================================= */
+
+@media screen and (min-width: 1400px) {
+
+  .career-container {
+    max-width: 1260px;
+  }
+
+  .career-banner {
+    min-height: 320px;
+
+    grid-template-columns:
+      49% 51%;
+  }
+
+  .career-banner-content {
+    padding:
+      48px 25px
+      48px 48px;
+  }
+
+  .career-banner-content h2 {
+    font-size: 35px;
+  }
+
+  .career-banner-content p {
+    font-size: 15px;
+  }
+
+  .career-heading h2 {
+    font-size: 26px;
+  }
+}
+
+
+/* =========================================
+   SMALL DESKTOP / TABLET
+   <= 1100
+========================================= */
+
+@media screen and (max-width: 1100px) {
+
+  .career-container {
+    padding-left: 22px;
+    padding-right: 22px;
+  }
+
+  .career-banner {
+    grid-template-columns:
+      50% 50%;
+
+    min-height: 285px;
+  }
+
+  .career-banner-content {
+    padding:
+      36px 20px
+      36px 34px;
+  }
+
+  .career-banner-content h2 {
+    font-size: 28px;
+  }
+
+  .career-banner-content p {
+    font-size: 13px;
+  }
+}
+
+
+/* =========================================
+   TABLET
+   <= 900
+========================================= */
+
+@media screen and (max-width: 900px) {
+
+  .career-banner {
+    min-height: 260px;
+
+    grid-template-columns:
+      52% 48%;
+  }
+
+  .career-banner-content {
+    padding:
+      30px 15px
+      30px 28px;
+  }
+
+  .career-banner-content h2 {
+    font-size: 25px;
+  }
+
+  .career-banner-content p {
+    max-width: 350px;
+
+    font-size: 12px;
+  }
+
+  .career-btn {
+    min-height: 40px;
+
+    font-size: 12px;
+  }
+
+  .career-features-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+}
+
+
+/* =========================================
+   MOBILE
+   <= 768
+========================================= */
+
+@media screen and (max-width: 768px) {
+
+  .career-container {
+    padding:
+      0 12px
+      45px;
+  }
+
+  /*
+    Keep banner side-by-side like
+    your mobile reference.
+  */
+  .career-banner {
+    min-height: 220px;
+
+    grid-template-columns:
+      55% 45%;
+
+    border-radius: 14px;
+  }
+
+  .career-banner-content {
+    padding:
+      22px 8px
+      22px 18px;
+  }
+
+  .career-banner-content h2 {
+    margin-bottom: 10px;
+
+    max-width: 220px;
+
+    font-size: 18px;
+    line-height: 1.18;
+
+    letter-spacing: -0.3px;
+  }
+
+  .career-banner-content p {
+    margin-bottom: 16px;
+
+    max-width: 220px;
+
+    font-size: 9.5px;
+    line-height: 1.45;
+  }
+
+  .career-btn {
+    min-height: 35px;
+
+    padding:
+      0 15px;
+
+    gap: 7px;
+
+    font-size: 10px;
+  }
+
+  .career-banner-image {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    /*
+      Keep man visible toward center/right.
+    */
+    object-position: 56% center;
+  }
+
+  .career-banner-image-wrap::before {
+    background:
+      linear-gradient(
+        90deg,
+        #06301c 0%,
+        rgba(6, 48, 28, 0.55) 12%,
+        transparent 40%
+      );
+  }
+
+  .career-heading {
+    margin-top: 22px;
+    margin-bottom: 13px;
+  }
+
+  .career-heading h2 {
+    font-size: 18px;
+  }
+
+  /*
+    Reference mobile design uses
+    four cards in one row.
+  */
+  .career-features-grid {
+    grid-template-columns:
+      repeat(4, minmax(0, 1fr));
+
+    gap: 7px;
+  }
+
+  .career-feature-card {
+    min-height: 92px;
+
+    padding:
+      11px 4px;
+
+    border-radius: 9px;
+  }
+
+  .career-feature-icon {
+    width: 30px;
+    height: 30px;
+
+    margin-bottom: 7px;
+
+    font-size: 15px;
+  }
+
+  .career-feature-card h3 {
+    font-size: 8.5px;
+    line-height: 1.2;
+  }
+}
+
+
+/* =========================================
+   SMALL MOBILE
+   <= 480
+========================================= */
+
+@media screen and (max-width: 480px) {
+
+  .career-container {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .career-banner {
+    min-height: 195px;
+
+    grid-template-columns:
+      57% 43%;
+
+    border-radius: 12px;
+  }
+
+  .career-banner-content {
+    padding:
+      18px 5px
+      18px 14px;
+  }
+
+  .career-banner-content h2 {
+    max-width: 195px;
+
+    font-size: 16px;
+
+    margin-bottom: 8px;
+  }
+
+  .career-banner-content p {
+    max-width: 190px;
+
+    margin-bottom: 14px;
+
+    font-size: 8.5px;
+
+    line-height: 1.4;
+  }
+
+  .career-btn {
+    min-height: 32px;
+
+    padding:
+      0 13px;
+
+    font-size: 9px;
+  }
+
+  .career-banner-image {
+    object-position: 55% center;
+  }
+
+  .career-heading {
+    margin-top: 19px;
+    margin-bottom: 11px;
+  }
+
+  .career-heading h2 {
+    font-size: 16px;
+  }
+
+  .career-features-grid {
+    gap: 5px;
+  }
+
+  .career-feature-card {
+    min-height: 82px;
+
+    padding:
+      9px 2px;
+  }
+
+  .career-feature-icon {
+    width: 27px;
+    height: 27px;
+
+    margin-bottom: 6px;
+
+    font-size: 13px;
+  }
+
+  .career-feature-card h3 {
+    font-size: 7.5px;
+  }
+}
+
+
+/* =========================================
+   EXTRA SMALL MOBILE
+   <= 380
+========================================= */
+
+@media screen and (max-width: 380px) {
+
+  .career-container {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+  .career-banner {
+    min-height: 180px;
+
+    grid-template-columns:
+      58% 42%;
+  }
+
+  .career-banner-content {
+    padding:
+      15px 4px
+      15px 12px;
+  }
+
+  .career-banner-content h2 {
+    font-size: 14px;
+  }
+
+  .career-banner-content p {
+    max-width: 165px;
+
+    font-size: 7.5px;
+  }
+
+  .career-btn {
+    min-height: 29px;
+
+    padding:
+      0 11px;
+
+    font-size: 8px;
+  }
+
+  .career-heading h2 {
+    font-size: 15px;
+  }
+
+  .career-feature-card {
+    min-height: 76px;
+  }
+
+  .career-feature-icon {
+    width: 24px;
+    height: 24px;
+
+    font-size: 12px;
+  }
+
+  .career-feature-card h3 {
+    font-size: 7px;
+  }
+}
